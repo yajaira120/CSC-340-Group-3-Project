@@ -1,21 +1,19 @@
 # CSC-340-Group-Project
 ## Title
-> Your project title
+> Medlink
 
 ## Team Members
-> List your names
+> Yajaira Alonso-Camarillo, Leonard Parra, Seth Dixon
 
 ## Description 
-> A brief description of what your app will be like and why it's interesting. Include brief summaries for the services provided by the app.
-> Possible questions to answer here:  What is the motivation for the app? What are the goals of the app/ What problem will the app solve?
->
+> Medlink is a web app that will provide a way for users to effortlessly find healthcare professionals. Users can search for healthcare professionals by browsing their profiles, checking availability, and booking appointments. After the users visit they can leave reviews based on their experience. Healthcare professionals can create profiles, post their availability, and view their reviews.  
 
 ## App Functions
 1. Customer (the user with the customer role):
-    1. Create/modify customer profile - how will your app do this?.
-    2. View available services - .
-    3. Subscribe to available services - .
-    4. Write reviews for subscribed services - .
+    1. Create/modify customer profile - the user will register as a patient.
+    2. View available services - browse the available healthcare professionals.
+    3. Subscribe to available services - book an appointment with the healthcare professional.
+    4. Write reviews for subscribed services - write a review of their experience.
 2. Provider (the user with the provider role):
     1. Create/modify/remove provider profile - .
     2. Create services - .
