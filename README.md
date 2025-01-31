@@ -15,10 +15,10 @@
     3. Subscribe to available services - book an appointment with the healthcare professional.
     4. Write reviews for subscribed services - write a review of their experience.
 2. Provider (the user with the provider role):
-    1. Create/modify/remove provider profile - .
-    2. Create services - .
-    3. View customer statistics -  .
-    4. Reply to reviews - .
+    1. Create/modify/remove provider profile - The user will register as a doctor.
+    2. Create services -  Create and publish appointments for patients.
+    3. View customer statistics -  View individual patients reviews and their overall ratings.
+    4. Reply to reviews - Reply to patient reviews.
 3. SysAdmin (the user with the admin role if applicable):
     1. Manage user access - Oversee user accounts, including granting or revoking access for customers and providers.
     2. Moderate services - Approve, edit, or remove service listings that violate platform policies.
