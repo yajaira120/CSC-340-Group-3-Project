@@ -20,7 +20,7 @@
     3. View customer statistics -  .
     4. Reply to reviews - .
 3. SysAdmin (the user with the admin role if applicable):
-    1. Manage user access - .
-    2. Moderate services - .
-    3. Moderate reviews - .
-    4. View usage statistics - .
+    1. Manage user access - Oversee user accounts, including granting or revoking access for customers and providers.
+    2. Moderate services - Approve, edit, or remove service listings that violate platform policies.
+    3. Moderate reviews - Review and manage user-submitted feedback to prevent inappropriate or fraudulent reviews.
+    4. View usage statistics - Track platform analytics, including user activity, provider engagement, and overall system performance.
