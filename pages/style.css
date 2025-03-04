@@ -273,42 +273,160 @@ body{
 /* Footer */
 
 .bottom_header {
-    background-color: #333; /* Dark background */
-    color: white; /* Light text color */
-    padding: 20px 0; /* Padding for the footer */
+    background-color: #333; 
+    color: white; 
+    padding: 20px 0; 
 }
 
 .footer_content {
-    max-width: 1200px; /* Max width for the content */
-    margin: 0 auto; /* Center the content */
-    padding: 0 20px; /* Horizontal padding */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
 .footer_left {
-    text-align: center; /* Center align the text */
+    text-align: center;
 }
 
 .footer_title {
-    font-size: 24px; /* Size for Medlink */
-    margin-bottom: 10px; /* Space between title and links */
+    font-size: 24px; 
+    margin-bottom: 10px; 
 }
 
 .footer_links {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: center; /* Center the links */
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
 }
 
 .footer_links li {
-    margin: 0 15px; /* Margin between links */
+    margin: 0 15px; 
 }
 
 .footer_links a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline */
+    color: white; 
+    text-decoration: none; 
 }
 
 .footer_links a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline; 
 }
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 252, 255); /* Background color of the page */
+    margin: 0; /* Remove default margin */
+}
+.choose_account {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.account_options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    /*padding: 20px;*/
+    /*gap: 20px;*/
+}
+
+.spacer{
+    width: 20px;
+}
+
+.account_chosen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+
+    border: 2px solid black;
+    text-decoration: none; 
+    color: black; 
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    border-radius: 10%;
+}
+.account_chosen:hover {
+    transform: scale(1.05); 
+}
+.account_image {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+.choose_account h2 {
+    font-size: 180%; 
+    margin: 0; 
+    text-align: center;
+    align-items: center;
+}
+
+.account_chosen p{
+    font-size: 150%;
+}
+
+/* Form for Patient */
+
+.user_form{
+    padding-top: 20px;
+    background-color:rgb(235, 252, 255);
+    padding-bottom: 20px;
+}
+
+.signup_container {
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.signup_container h2 {
+    text-align: center;
+}
+
+.signup_container label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+.signup_container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup_container button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup_container button:hover {
+    background-color: rgb(50, 130, 200);
+}
+
