@@ -4,6 +4,7 @@ body{
     overflow-x: hidden;
 }
 
+/* Header */
 .header{
     background-color: white;
     display: flex;
@@ -38,12 +39,12 @@ body{
 .navbar li{
     display: inline-block;
     padding: 20px;
-    padding-top: 35px;
+    padding-top: 45px;
 }
 
 .navbar li a{
     text-decoration: none;
-    font-size: 100%;
+    font-size: 120%;
     color: black;
     font-weight: bold;
     text-align: center;
@@ -54,7 +55,6 @@ body{
     background-color: #cbe8f7;
 }
 
-
 .header-image img{
     display: block;
     max-width: 100%;
@@ -62,14 +62,253 @@ body{
     overflow: hidden;
 }
 
-.search{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
+.header-image{
+    position: relative;
 }
+
+/*Content*/
 
 .content{
     background:rgb(235, 252, 255);
+}
+
+#welcome h1{
+    padding-left: 20px;
+    font-size: 250%;
+}
+
+.content h2{
+    padding-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+
+.content p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 20px;
+    font-size: 150%;
+}
+
+.intro_image{
+    float: right;
+    margin-right: 10px;
+    width:30%;
+    height: auto;
+    padding-right: 10px;
+}
+
+.intro{
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    padding-left: 50px;
+    font-size: 110%;
+}
+
+
+/* Search Bar */
+.search{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 #d6d9e2;
+    border-radius: 100px;
+    margin-inline: auto;
+    width: 1200px;
+    max-width: 100%;
+    padding: 10px;
+    height: 100px;
+    border: 2px solid black;
+    /*overflow: hidden;*/
+}
+
+.search form{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 14px;
+    width: 100%;
+}
+
+.search-input{
+    font-size: 18px;
+    color: #3a3a3a;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-inline: 0 8px;
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    /*border-radius: 20px;*/
+}
+
+.search-input:not(:last-child){
+    border-right: 1px solid black;
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.search-submit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    background-color: #dbdfdf;
+    aspect-ratio: 1;
+    cursor: pointer;
+    height: 40px;
+    padding: 0;
+}
+
+/* Areas of Specialty*/
+
+.areas_of_specialty{
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.areas_of_specialty h2{
+    font-size: 180%;
+}
+
+.areas_of_specialty a{
+    text-decoration: none;
+}
+
+.specialty p{
+    text-decoration: none;
+    font-size: 120%;
+    color: black;
+}
+
+.gallery{
+    background-color:white;
+    display: inline-block;
+    border: 2px solid rgb(166,215, 255);
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.specialty p{
+    text-decoration: none;
+    text-align: center;
+    padding-right: 10px;
+}
+
+/* What is Medlink*/
+
+.explanation{
+    background-color: white;
+    padding-top: 20px;
+}
+
+.explanation h2{
+    padding-left: 50px;
+}
+
+.user_sections{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    background-color: white;
+}
+
+.provider_sections{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    background-color: white;
+}
+
+.sections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    margin: 5px;
+    height: 500px;
+    border: 2px solid rgb(166, 215, 255);
+    border-radius: 20px;
+    width: 350px;
+}
+
+.button_sections{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(77, 169, 244); 
+    border: none; 
+    color: white; 
+    cursor: pointer; 
+    padding-right: 15px;
+    border-radius: 10px;
+
+}
+
+.button_sections p{
+    text-align: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.button_sections a {
+    text-decoration: none; 
+    color: white; 
+}
+
+.button_sections:hover {
+    background-color: rgb(50, 130, 200); 
+}
+
+/* Footer */
+
+.bottom_header {
+    background-color: #333; /* Dark background */
+    color: white; /* Light text color */
+    padding: 20px 0; /* Padding for the footer */
+}
+
+.footer_content {
+    max-width: 1200px; /* Max width for the content */
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.footer_left {
+    text-align: center; /* Center align the text */
+}
+
+.footer_title {
+    font-size: 24px; /* Size for Medlink */
+    margin-bottom: 10px; /* Space between title and links */
+}
+
+.footer_links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center the links */
+}
+
+.footer_links li {
+    margin: 0 15px; /* Margin between links */
+}
+
+.footer_links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer_links a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
