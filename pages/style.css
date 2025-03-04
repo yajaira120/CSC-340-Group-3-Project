@@ -1107,3 +1107,61 @@ button:hover {
     font-size: 14px;
     color: #999;
 }
+
+
+.signup-container {
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 800px;
+    gap: 1px;
+}
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            display: grid;
+
+            gap: 10px;
+
+        }
+        .form-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 5px;
+
+        }
+        .form-group {
+            margin-bottom: 2px;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .full-width{
+        grid-column: span 2;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 2px;
+
+        }
+        .form-group input {
+                    width: 100%;
+                    padding: 10px;
+                    box-sizing: border-box;
+
+                }
+                .submit-btn {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #1473c8;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .submit-btn:hover {
+                    background-color: #45a049;
+                }
