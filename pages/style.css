@@ -384,13 +384,18 @@ body{
 
 /* Form for Patient */
 
-.user_form{
+.user_form {
+    padding-top: 20px;
+    background-color:rgb(235, 252, 255);
+    padding-bottom: 20px;
+}
+.appointment_form{
     padding-top: 20px;
     background-color:rgb(235, 252, 255);
     padding-bottom: 20px;
 }
 
-.signup_container {
+.signup_container{
     padding-top: 20px;
     max-width: 500px;
     margin: 50px auto;
@@ -400,17 +405,36 @@ body{
     background-color: #f9f9f9;
 }
 
-.signup_container h2 {
+.make_appointment {
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.signup_container h2{
     text-align: center;
     font-size: 30px;
 }
 
-.signup_container label {
+.make_appointment h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.signup_container label{
+    display: block;
+    margin: 15px 0 5px;
+}
+.make_appointment label{
     display: block;
     margin: 15px 0 5px;
 }
 
-.signup_container input {
+.signup_container input{
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
@@ -418,7 +442,26 @@ body{
     border-radius: 5px;
 }
 
-.signup_container button {
+.make_appointment input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup_container button{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.make_appointment button {
     width: 100%;
     padding: 10px;
     background-color: rgb(77, 169, 244);
@@ -432,12 +475,22 @@ body{
     text-decoration: none;
     color: black;
 }
+.make_appointment a{
+    text-decoration: none;
+    color: black;
+}
 
 .signup_container button:hover {
     background-color: rgb(50, 130, 200);
 }
+.make_appointment button:hover {
+    background-color: rgb(50, 130, 200);
+}
 
 #signup_form{
+    font-size: 18px;
+}
+#appointment_box{
     font-size: 18px;
 }
 
@@ -944,8 +997,8 @@ button:hover {
     margin: 10px 0 5px;
 }
 
-input[type="text"],
-textarea {
+.review-form-container input[type="text"],
+.review-form-container textarea {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px; 
@@ -953,7 +1006,7 @@ textarea {
     border: 1px solid #ccc;
 }
 
-textarea {
+.review-form-container textarea {
     height: 100px; /* specific height for the textarea */
 }
 
@@ -968,4 +1021,89 @@ textarea {
 
 .submit-review-button:hover {
     background-color: rgb(77, 169, 244); /* darker blue on hover */
+}
+
+/* Calendar */
+.calendar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.calendar-heading {
+    font-size: 1.5em;
+}
+
+.calendar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.calendar li {
+    margin: 5px 0;
+}
+
+.calendar a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.calendar a:hover {
+    text-decoration: underline;
+}
+
+.availability-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Reset padding */
+}
+
+.availability-list li {
+    margin-bottom: 20px; /* Space between dates */
+}
+
+.time-slots {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of elements */
+}
+
+.time-slots a {
+    display: inline-block; /* Ensure a is inline-block */
+    margin-right: 10px; /* Space between time slots */
+    padding: 5px 10px; /* Padding for better clickability */
+    border: 1px solid #007BFF; /* Border for button-style look */
+    color: #007BFF; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.time-slots a:hover {
+    background-color: #007BFF; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.confirmation_appointment{
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation_appointment h1 {
+    color: black;
+}
+.confirmation_appointment h2 {
+    font-size: 20px;
+    color: #333;
+}
+.detail {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+.bottom_message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
 }
