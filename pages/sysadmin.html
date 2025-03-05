@@ -6,14 +6,21 @@
     <title>Medlink - SysAdmin Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sysadmin.css">
-    <script defer src="../scripts/sysadmin.js"></script>
+    
+    <!-- Link to the external JavaScript file in the scripts folder -->
+    <script defer src="scripts/sysadmin.js"></script> 
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html"; // Redirect to login if not logged in
+        }
+    </script>
+    
 </head>
-<script>
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-        window.location.href = "login.html"; // Redirect back to login if not logged in
-    }
-</script>
+
+
+
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-left">
             <img src="images/logo-medlink.png" alt="Logo" class="logo">
@@ -23,11 +30,11 @@
             <a href="Home.html">Home</a>
             <a href="sysadmin.html">Dashboard</a>
             <a href="login.html">Log Out</a>
-           
         </div>
     </nav>
 
     <div class="admin-container">
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <ul>
                 <li><a href="#dashboard">Dashboard</a></li>
@@ -38,25 +45,94 @@
             </ul>
         </aside>
 
+        <!-- Main Content -->
         <main class="admin-content">
-            <section id="dashboard">
-                <h2>Dashboard Overview</h2>
-                <div class="stats">
+            <!-- Dashboard Overview -->
+            <section id="dashboard" class="admin-section">
+                <h2 onclick="toggleSection('dashboard-content')">Dashboard Overview ▼</h2>
+                <div id="dashboard-content" class="content">
                     <p>Total Users: <span id="total-users">500</span></p>
                     <p>Flagged Services: <span id="flagged-services">10</span></p>
                     <p>Flagged Reviews: <span id="flagged-reviews">5</span></p>
                 </div>
             </section>
-
-            <section id="user-management">
-                <h2>User Management</h2>
-                <table>
-                    <tr><th>User</th><th>Role</th><th>Action</th></tr>
-                    <tr><td>John Doe</td><td>Customer</td><td><button onclick="banUser()">Ban</button></td></tr>
-                    <tr><td>Jane Smith</td><td>Provider</td><td><button onclick="suspendUser()">Suspend</button></td></tr>
-                </table>
+        
+            <!-- User Management -->
+            <section id="user-management" class="admin-section">
+                <h2 onclick="toggleSection('user-management-content')">User Management ▼</h2>
+                <div id="user-management-content" class="content">
+                    <table>
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Customer</td>
+                            <td>
+                                <button class="ban-btn" data-username="John Doe">Ban</button>
+                                <button class="suspend-btn" data-username="John Doe">Suspend</button>
+                                <button class="profile-btn" data-username="John Doe">View Profile</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Provider</td>
+                            <td>
+                                <button class="ban-btn" data-username="Jane Smith">Ban</button>
+                                <button class="suspend-btn" data-username="Jane Smith">Suspend</button>
+                                <button class="profile-btn" data-username="Jane Smith">View Profile</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        
+            <!-- Banned Users -->
+            <section id="banned-users" class="admin-section">
+                <h2 onclick="toggleSection('banned-users-content')">Banned Users ▼</h2>
+                <div id="banned-users-content" class="content">
+                    <table>
+                        <tr><th>User</th><th>Role</th><th>Actions</th></tr>
+                        <tbody id="banned-users-list"></tbody>
+                    </table>
+                </div>
+            </section>
+        
+            <!-- Suspended Users -->
+            <section id="suspended-users" class="admin-section">
+                <h2 onclick="toggleSection('suspended-users-content')">Suspended Users ▼</h2>
+                <div id="suspended-users-content" class="content">
+                    <table>
+                        <tr><th>User</th><th>Role</th><th>Actions</th></tr>
+                        <tbody id="suspended-users-list"></tbody>
+                    </table>
+                </div>
+            </section>
+        
+            <!-- Service Moderation -->
+            <section id="service-moderation" class="admin-section">
+                <h2 onclick="toggleSection('service-moderation-content')">Service Moderation ▼</h2>
+                <div id="service-moderation-content" class="content">
+                    <p>Review and remove inappropriate services.</p>
+                </div>
+            </section>
+        
+            <!-- Review Moderation -->
+            <section id="review-moderation" class="admin-section">
+                <h2 onclick="toggleSection('review-moderation-content')">Review Moderation ▼</h2>
+                <div id="review-moderation-content" class="content">
+                    <p>Delete offensive or false reviews.</p>
+                </div>
+            </section>
+        
+            <!-- Analytics -->
+            <section id="analytics" class="admin-section">
+                <h2 onclick="toggleSection('analytics-content')">Analytics ▼</h2>
+                <div id="analytics-content" class="content">
+                    <p>Monitor platform usage and flagged content.</p>
+                </div>
             </section>
         </main>
-    </div>
-</body>
-</html>
+        
