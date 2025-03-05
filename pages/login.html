@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - MedLink</title>
+    <title>Medlink - Admin Login</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="login.js"></script>
+    <script defer src="scripts/login.js"></script>
 </head>
 <body>
+
     <div class="login-container">
-        <h2>SysAdmin Login</h2>
-        <form onsubmit="return loginUser()">
+        <h2>Admin Login</h2>
+        <form id="login-form">
             <label for="username">Username:</label>
             <input type="text" id="username" required>
 
@@ -19,7 +20,12 @@
 
             <button type="submit">Login</button>
         </form>
+
         <p id="error-message" style="color: red;"></p>
+
+        <!-- Back to Home Button -->
+        <button onclick="goBackToHome()">Back to Home</button>
     </div>
+
 </body>
 </html>
