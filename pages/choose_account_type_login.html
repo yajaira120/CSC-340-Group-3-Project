@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title> Write a Review </title>
+        <title> Account Login </title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
@@ -25,20 +25,39 @@
             </div>
         </div>
 
-        <div class="review-form-container">
-            <h1 class="form-title">Write a Review for Dr. John Doe</h1>
-            <form>
-                <label for="reviewer-name">Your Name:</label>
-                <input type="text" id="reviewer-name" name="reviewer-name" required>
+        <div class="wrapper">
+            <div class="choose_account">
+                <h2> Log In: Select Account Type </h2>
 
-                <label for="review-text">Your Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
+                <div class="account_options">
+                    <a class="account_chosen" href="log_in.html">
+                        <img src="images/user_image.png" alt="User" class="account_image">
+                        <div><p> User </p> </div>
 
-                <button type="submit" class="submit-review-button">Submit Review</button>
-            </form>
+                        <br>
+                    </a>
+
+                    <div class="spacer"></div> 
+
+                    <a class="account_chosen" href="#">
+                        <img src="images/provider_image.png" alt="Provider" class="account_image">
+                        <div> <p> Provider </p> </div>
+
+                        <br>
+                    </a>
+
+                </div>
+
+                <p> Don't have an account? <a href="choose_account_type.html"> Sign Up </a> </p>
+
+                <br>
+                <br>
+                <br>
+            </div>
+
         </div>
 
-
+        
         <div class="bottom_header">
             <footer>
                 <div class="footer_content">
@@ -56,8 +75,6 @@
                 </div>
             </footer>
         </div>
-
-
 
     </body>
 </html>
