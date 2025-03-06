@@ -1133,3 +1133,161 @@ button:hover {
 }
 
 
+
+/* provider stuff */
+
+body{
+    background-image: url('images/background-image.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-attachment: fixed;
+
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width:100%;
+
+    overflow-x: hidden;
+
+}
+
+.header{
+    background-color: white;
+    display: flex;
+}
+
+.header h1{
+    margin-left: 5px;
+    margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.header h1 a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo{
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+}
+
+.navbar{
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: 20px;
+    padding-right:20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar li{
+    display: inline-block;
+    padding: 20px;
+    padding-top: 35px;
+}
+
+.navbar li a{
+    text-decoration: none;
+    font-size: 100%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar li a: hover{
+    background-color: #cbe8f7;
+}
+
+
+.header-image img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.content{
+    background:rgb(235, 252, 255);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    flex: 1;
+
+
+}
+
+.signup-container {
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 800px;
+    gap: 1px;
+}
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            display: grid;
+
+            gap: 10px;
+
+        }
+        .form-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 5px;
+
+        }
+        .form-group {
+            margin-bottom: 2px;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .full-width{
+        grid-column: span 2;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 2px;
+
+        }
+        .form-group input {
+                    width: 100%;
+                    padding: 10px;
+                    box-sizing: border-box;
+
+                }
+                .submit-btn {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #1473c8;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .submit-btn:hover {
+                    background-color: #45a049;
+                }
+
+
