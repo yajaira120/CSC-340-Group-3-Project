@@ -40,7 +40,7 @@ public class PatientService {
 
     /**
      * Update an existing patient, with new data
-     * @param patient, new student details
+     * @param patient, new patient details
      * @param patient_id
      */
     public void updatePatient(int patient_id, Patient patient){

@@ -70,6 +70,4 @@ public class PatientController {
         return new ResponseEntity<>(patientService.getPatientById(patient_id), HttpStatus.OK);
     }
 
-
-
 }
