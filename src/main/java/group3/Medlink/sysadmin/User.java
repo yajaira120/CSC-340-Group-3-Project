@@ -11,26 +11,11 @@ public class User {
     private Long id;
 
     private String username;
-
     private String email;
-
-    private String role; // e.g., "Customer", "Provider", etc.
-
-    private String accountStatus; // e.g., "Active", "Banned", "Suspended"
-
-    // Default constructor (required by JPA)
-    public User() {
-    }
-
-    public User(String username, String email, String role, String accountStatus) {
-        this.username = username;
-        this.email = email;
-        this.role = role;
-        this.accountStatus = accountStatus;
-    }
+    private String role;
+    private String accountStatus;
 
     // Getters and setters
-
     public Long getId() {
         return id;
     }

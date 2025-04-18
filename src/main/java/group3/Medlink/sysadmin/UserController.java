@@ -1,6 +1,8 @@
 package group3.Medlink.sysadmin;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,21 +14,26 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // GET /users - Get all users
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    // PUT /users/{id}/status - Update user account status
-    @PutMapping("/{id}/status")
-    public User updateUserStatus(@PathVariable Long id, @RequestBody String status) {
-        return userService.updateUserStatus(id, status);
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
-    // DELETE /users/{id} - Delete a user
+    // ✅ FIXED: Removed extra "/users"
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUserStatus(@PathVariable Long id, @RequestParam String status) {
+        User updatedUser = userService.updateUserStatus(id, status);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 }
