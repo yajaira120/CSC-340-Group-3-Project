@@ -20,4 +20,9 @@ public class UserService {
         user.setAccountStatus(status);
         return userRepo.save(user);
     }
+    public User getUserById(Long id) {
+        return userRepo.findById(id)
+            .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+    }
+    
 }

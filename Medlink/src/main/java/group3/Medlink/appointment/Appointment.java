@@ -1,7 +1,7 @@
 package group3.Medlink.appointment;
 
 import group3.Medlink.patient.Patient;
-import group3.Medlink.provider.Provider;
+//import group3.Medlink.provider.Provider;
 import jakarta.persistence.*;
 import java.sql.*;
 
@@ -17,9 +17,9 @@ public class Appointment {
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "provider_id", nullable = false)
-    private Provider provider;
+   // @ManyToOne
+   // @JoinColumn(name = "provider_id", nullable = false)
+    //private Provider provider;
 
     @Column(nullable = false)
     private Date appointment_date;
@@ -54,13 +54,13 @@ public class Appointment {
     }
 
     //provider
-    public Provider getProvider() {
-        return provider;
-    }
+    //public Provider getProvider() {
+    //    return provider;
+   // }
 
-    public void setProvider(Provider provider) {
-        this.provider = provider;
-    }
+  //  public void setProvider(Provider provider) {
+    //    this.provider = provider;
+  //  }
 
     //appointment_date
     public Date getAppointment_date() {

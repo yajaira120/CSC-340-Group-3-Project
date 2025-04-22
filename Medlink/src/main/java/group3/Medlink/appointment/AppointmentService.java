@@ -5,7 +5,7 @@ import group3.Medlink.appointment.AppointmentRepository;
 import group3.Medlink.patient.Patient;
 import group3.Medlink.patient.PatientRepository;
 
-import group3.Medlink.provider.Provider;
+//import group3.Medlink.provider.Provider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+</head>
+<body>
+    <h1>Update User Account Status</h1>
+    <form th:action="@{/users/update}" method="post">
+        <input type="hidden" name="id" th:value="${user.id}" />
+
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Role:</strong> <span th:text="${user.role}"></span></p>
+
+        <label for="accountStatus">Account Status:</label>
+        <select id="accountStatus" name="accountStatus">
+            <option value="ACTIVE" th:selected="${user.accountStatus == 'ACTIVE'}">ACTIVE</option>
+            <option value="SUSPENDED" th:selected="${user.accountStatus == 'SUSPENDED'}">SUSPENDED</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Update</button>
+    </form>
+
+    <br>
+    <a href="/users">Back to Users</a>
+</body>
+</html>
