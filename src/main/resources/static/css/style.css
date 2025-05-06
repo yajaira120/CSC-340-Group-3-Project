@@ -1,0 +1,1139 @@
+body{
+    width:100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header{
+    background-color: white;
+    display: flex;
+}
+
+.header h1{
+    margin-left: 5px;
+    margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.header h1 a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo{
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+}
+
+.navbar{
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: 20px;
+    padding-right:20px;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+.navbar li{
+    display: inline-block;
+    padding: 20px;
+    padding-top: 45px;
+}
+
+.navbar li a{
+    text-decoration: none;
+    font-size: 120%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar li a:hover{
+    background-color: #cbe8f7;
+}
+
+.header-image img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.header-image{
+    position: relative;
+}
+
+/*Content*/
+
+.content{
+    background:rgb(235, 252, 255);
+}
+
+#welcome h1{
+    padding-left: 20px;
+    font-size: 250%;
+}
+
+.content h2{
+    padding-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+
+.content p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 20px;
+    font-size: 150%;
+}
+
+.intro_image{
+    float: right;
+    margin-right: 10px;
+    width:30%;
+    height: auto;
+    padding-right: 10px;
+}
+
+.intro{
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    padding-left: 50px;
+    font-size: 110%;
+}
+
+/* Search Bar */
+.search{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 #d6d9e2;
+    border-radius: 100px;
+    margin-inline: auto;
+    width: 1200px;
+    max-width: 100%;
+    padding: 10px;
+    height: 100px;
+    border: 2px solid black;
+    /*overflow: hidden;*/
+}
+
+.search form{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 14px;
+    width: 100%;
+}
+
+.search-input{
+    font-size: 18px;
+    color: #3a3a3a;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-inline: 0 8px;
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    /*border-radius: 20px;*/
+}
+
+.search-input:not(:last-child){
+    border-right: 1px solid black;
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.search-submit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    background-color: #dbdfdf;
+    aspect-ratio: 1;
+    cursor: pointer;
+    height: 40px;
+    padding: 0;
+}
+
+/* Areas of Specialty*/
+
+.areas_of_specialty{
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.areas_of_specialty h2{
+    font-size: 180%;
+}
+
+.areas_of_specialty a{
+    text-decoration: none;
+}
+
+.specialty p{
+    text-decoration: none;
+    font-size: 120%;
+    color: black;
+}
+
+.gallery{
+    background-color:white;
+    display: inline-block;
+    border: 2px solid rgb(166,215, 255);
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.specialty p{
+    text-decoration: none;
+    text-align: center;
+    padding-right: 10px;
+}
+
+/* What is Medlink*/
+
+.explanation{
+    background-color: white;
+    padding-top: 20px;
+}
+
+.explanation h2{
+    padding-left: 50px;
+}
+
+.user_sections{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    background-color: white;
+}
+
+.provider_sections{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    background-color: white;
+}
+
+.sections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    margin: 5px;
+    height: 500px;
+    border: 2px solid rgb(166, 215, 255);
+    border-radius: 20px;
+    width: 350px;
+}
+
+.button_sections{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(77, 169, 244); 
+    border: none; 
+    color: white; 
+    cursor: pointer; 
+    padding-right: 15px;
+    border-radius: 10px;
+
+}
+
+.button_sections p{
+    text-align: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.button_sections a {
+    text-decoration: none; 
+    color: white; 
+}
+
+.button_sections:hover {
+    background-color: rgb(50, 130, 200); 
+}
+
+/* Footer */
+
+.bottom_header {
+    background-color: #333; 
+    color: white; 
+    padding: 20px 0; 
+    
+}
+
+.footer_content {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.footer_left {
+    text-align: center;
+}
+
+.footer_title {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+.footer_links {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.footer_links li {
+    margin: 0 15px; 
+}
+
+.footer_links a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.footer_links a:hover {
+    text-decoration: underline; 
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 252, 255); 
+    margin: 0; 
+}
+
+.choose_account {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.account_options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    /*padding: 20px;*/
+    /*gap: 20px;*/
+}
+
+.spacer{
+    width: 20px;
+}
+
+.account_chosen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+
+    border: 2px solid black;
+    text-decoration: none; 
+    color: black; 
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    border-radius: 10%;
+}
+.account_chosen:hover {
+    transform: scale(1.05); 
+}
+.account_image {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+.choose_account h2 {
+    font-size: 180%; 
+    margin: 0; 
+    text-align: center;
+    align-items: center;
+}
+
+.choose_account a{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(50, 130, 200);
+}
+
+.choose_account p{
+    margin-top: 30px;
+}
+
+.account_chosen p{
+    font-size: 150%;
+}
+
+/* Form for Patient and Appointment */
+
+.user_form{
+    background-color: rgb(166, 215, 255);
+    padding-top: 40px;
+    background-color:rgb(235, 252, 255);
+    padding-bottom: 40px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.appointment_form{
+    padding-top: 20px;
+    background-color:rgb(235, 252, 255);
+    padding-bottom: 20px;
+}
+
+.signup_container {
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.make_appointment {
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.signup_container h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.make_appointment h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.signup_container label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+.make_appointment label{
+    display: block;
+    margin: 15px 0 5px;
+}
+
+.signup_container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.make_appointment input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup_container button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.make_appointment button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.signup_container a{
+    text-decoration: none;
+    color: black;
+    font-size: 90%;
+}
+
+.make_appointment a{
+    text-decoration: none;
+    color: black;
+}
+
+.signup_container button:hover {
+    background-color: rgb(50, 130, 200);
+}
+
+.make_appointment button:hover {
+    background-color: rgb(50, 130, 200);
+}
+
+#signup_form{
+    font-size: 18px;
+}
+
+#appointment_box{
+    font-size: 18px;
+}
+
+/* Confirmation Page */
+.body_of_confirmation{
+    background-color: rgb(235, 252, 255);
+    text-align: center;
+    padding: 200px;
+}
+
+.confirmation{
+    margin: auto;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation h1{
+    color: black;
+}
+
+.confirmation p{
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.confirmation_buttons{
+    background-color:rgb(77, 169, 244);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.confirmation_buttons a{
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    background-color: rgb(50, 130, 200);
+}
+
+/* User Profile */
+.user_profile_container{
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.left_sidebar{
+    width: 250px;
+    background: rgb(166, 215, 255);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile_section{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profile_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.left_sidebar h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.nav_links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav_links ul li {
+    margin: 10px 0;
+}
+
+.nav_links ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav_links ul li a:hover {
+    text-decoration: underline;
+}
+
+.main_content_profile{
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border:rgb(50, 130, 200);
+    margin-bottom: 40px;
+}
+
+.content {
+    display: block;
+}
+
+.main_content_profile h3{
+    font-size: 30px;
+}
+
+.main_content_profile h4{
+    font-size: 25px;
+}
+
+.main_content_profile p{
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/* Appointments */
+
+.appointments_container{
+    max-width: 1000px;
+    margin:20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointments_container h1{
+    text-align: center;
+}
+
+.appointments_section{
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.appointment{
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 4px;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+.review_button {
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.review_button:hover {
+    background-color: rgb(50, 130, 200);
+}
+.review_button a{
+    text-decoration: none;
+    color: white;
+}
+
+.appointment p{
+    font-size: 20px;
+}
+
+/* Healthcare Providers*/
+.list_of_providers{
+    width: 70%;
+    padding: 20px;
+}
+
+.provider_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.provider {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.provider a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.view_button{
+    margin-top:10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Account Details */
+
+.account_container{
+    max-width: 1000px;
+    margin:20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+.account_details {
+    padding: 20px;
+    flex: 1;
+    width:400px;
+}
+
+.account_details h2 {
+    margin-top: 0;
+}
+
+.account_info p {
+    margin: 5px 0;
+    font-size:20px;
+}
+
+.edit_button {
+    margin-top:10px;
+    background-color: rgb(77, 169, 244);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit_button:hover {
+    background-color: #0056b3;
+}
+
+.edit_button a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Edit Account */
+
+.edit_account_container{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit_account_container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+
+.form_group {
+    margin-bottom: 15px;
+    padding-right:15px;
+}
+
+.form_group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form_group input,
+.form_group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.save_button, .cancel_button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save_button {
+    background-color: #007BFF;
+    color: white;
+}
+
+.save_button a{
+    text-decoration: none;
+    color:white;
+}
+
+.save_button:hover {
+    background-color: #0056b3;
+}
+
+.cancel_button {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancel_button a{
+    text-decoration: none;
+    color: white;
+}
+
+.cancel_button:hover {
+    background-color: #c62828;
+}
+
+/* Browse.html */
+.provider-list {
+    margin-left:350px;
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+.provider-card {
+    display: flex;
+    background: white;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+}
+
+.provider-image {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    margin-right: 20px; 
+}
+
+.provider-info {
+    flex-grow: 1; 
+}
+
+.provider-info p{
+    font-size: 20px;
+}
+
+.provider-name {
+    margin: 0 0 5px;
+    font-size: 1.5em; 
+}
+
+.provider-location, 
+.provider-specialty {
+    margin: 5px 0;
+    color: #666;
+}
+
+.rating-and-button{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.provider-rating{
+    margin:0;
+}
+
+.profile-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.profile-button:hover {
+    background-color: #0056b3;
+}
+
+.browse_content{
+    background-color: rgb(235, 252, 255);
+    padding: 40px;
+}
+
+/* Service Provider Page */
+
+.provider-detail {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.provider-image-container {
+    margin-right: 20px; 
+    text-align: center;
+}
+
+.provider-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+.provider-rating {
+    font-size: 1.2em; 
+}
+
+.provider-info {
+    flex-grow: 1; 
+}
+
+.provider-name {
+    margin: 0 0 10px;
+    font-size: 2em; 
+}
+
+.provider-location, 
+.provider-specialty, 
+.provider-credentials {
+    margin: 5px 0;
+    color: #666;
+}
+
+.reviews-heading {
+    margin-top: 15px;
+}
+
+.review {
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: bold;
+}
+
+.review-text {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Write a Review */
+
+.write_review_button {
+    display: inline-block; 
+    padding: 10px 15px; 
+    background-color: rgb(77, 169, 244);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; 
+}
+
+.write_review_button:hover {
+    background-color: rgb(50, 130, 200); 
+}
+
+.review-form-container {
+    max-width: 800px; 
+    margin: 0 auto; 
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.form-title {
+    margin-bottom: 20px;
+}
+
+.review-form-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.review-form-container input[type="text"],
+.review-form-container textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px; 
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.review-form-container textarea {
+    height: 100px; 
+}
+
+.submit-review-button {
+    background-color: rgb(77, 169, 244); 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.submit-review-button:hover {
+    background-color: rgb(50, 130, 200); 
+}
+
+/* Calendar */
+.calendar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.calendar-heading {
+    font-size: 1.5em;
+}
+
+.calendar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.calendar li {
+    margin: 5px 0;
+}
+
+.calendar a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.calendar a:hover {
+    text-decoration: underline;
+}
+
+.availability-list {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.availability-list li {
+    margin-bottom: 20px; 
+}
+
+.time-slots {
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.time-slots a {
+    display: inline-block; 
+    margin-right: 10px; 
+    padding: 5px 10px; 
+    border: 1px solid #007BFF; 
+    color: #007BFF; 
+    text-decoration: none; 
+    border-radius: 5px; 
+}
+
+.time-slots a:hover {
+    background-color: #007BFF; 
+    color: white; 
+}
+
+.confirmation_appointment{
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation_appointment h1 {
+    color: black;
+}
+
+.confirmation_appointment h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.detail {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+.bottom_message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+

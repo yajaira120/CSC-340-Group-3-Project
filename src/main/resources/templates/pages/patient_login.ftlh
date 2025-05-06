@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Medlink </title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="logo">
+                <img src = "images/logo-medlink.png" alt="Medlink" width="100" height="100"/>
+            </div>
+            <h1> <a href="/home"> Medlink </a> </h1>
+
+            <div class="navbar">
+                <ul>
+                    <li> <a href = "/home"> Home </a></li>
+                    <li> <a href = "/browse"> Browse </a></li>
+                    <li> <a href = "/account-type-login"> Log In </a></li>
+                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
+                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="user_form">
+            <div class="signup_container">
+                <h2> Log In </h2>
+
+                <form id="signup_form">
+                    <label for="email"> Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+
+                    <label for="password"> Password: </label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+
+                    <button type="submit">
+                        <a href="user_profile.html"> Submit </a>
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="bottom_header">
+            <footer>
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <p class="footer_title"> Medlink </p>
+                        <ul class="footer_links">
+                            <li> <a href="/home"> Home </a> </li>
+                            <li> <a href="/browse"> Browse </a></li>
+                            <li> <a href="/account-type-login"> Log In </a> </li>
+                            <li> <a href="/account-type-signup"> Sign Up </a></li>
+                            <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                        </ul>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>
