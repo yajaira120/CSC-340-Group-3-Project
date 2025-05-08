@@ -17,11 +17,11 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
+    private Patient patient_id;
 
     @ManyToOne
     @JoinColumn(name = "provider_id", nullable = false)
-    private Provider provider;
+    private Provider provider_id;
 
     @Column(nullable = false)
     private int rating;
@@ -47,18 +47,18 @@ public class Review {
         this.review_id = review_id;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getPatient_id() {
+        return patient_id;
     }
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatient_id(Patient patient_id) {
+        this.patient_id = patient_id;
     }
 
-    public Provider getProvider() {
-        return provider;
+    public Provider getProvider_id() {
+        return provider_id;
     }
-    public void setProvider(Provider provider) {
-        this.provider = provider;
+    public void setProvider_id(Provider provider_id) {
+        this.provider_id = provider_id;
     }
 
     public int getRating() {

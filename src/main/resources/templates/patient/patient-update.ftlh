@@ -16,11 +16,18 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "/home"> Home </a></li>
-                    <li> <a href = "/browse"> Browse </a></li>
-                    <li> <a href = "/account-type-login"> Log In </a></li>
-                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li><a href="/home">Home</a></li>
+                                                            <li><a href="/browse">Browse</a></li>
+
+                                                            <#if sessionPatient??>
+                                                                <!-- Only show if the user is logged in -->
+                                                                <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                <li><a href="/logout">Logout</a></li>
+                                                            <#else>
+                                                                <li><a href="/account-type-login">Log In</a></li>
+                                                                <li><a href="/account-type-signup">Sign Up</a></li>
+                                                            </#if>
+                                                                <li><a href="/SysAdmin.html">Admin Panel</a></li>
                 </ul>
             </div>
         </div>
@@ -30,22 +37,22 @@
                 <h2> ${title}</h2>
 
                 <form id="signup_form" action="/patients/update/${patient_id}" method="post">
-                    <input type="hidden" name="patientId" value="${patient.patient_id}"/>
+                    <input type="hidden" name="patientId" value="${patient_id.patient_id}"/>
 
                     <label for="name"> Name: </label>
-                    <input type="text" id="name" name="name" value="${patient.name}" placeholder="Full Name...">
+                    <input type="text" id="name" name="name" value="${patient_id.name}" placeholder="Full Name...">
 
                     <label for="address"> Address: </label>
-                    <input type="text" id="address" name="address" value="${patient.address}" placeholder="Street Address, City, State/Province, Zip Code, Country...">
+                    <input type="text" id="address" name="address" value="${patient_id.address}" placeholder="Street Address, City, State/Province, Zip Code, Country...">
 
                     <label for="dob"> Date of Birth: </label>
-                    <input type="Date" id="dob" name="dob" value="${patient.dob}">
+                    <input type="Date" id="dob" name="dob" value="${patient_id.dob}">
 
                     <label for="email"> Email: </label>
-                    <input type="email" id="email" name="email" value="${patient.email}" placeholder="Email...">
+                    <input type="email" id="email" name="email" value="${patient_id.email}" placeholder="Email...">
 
                     <label for="password"> Password: </label>
-                    <input type="password" id="password" name="password" value="${patient.password}" placeholder="Password">
+                    <input type="password" id="password" name="password" value="${patient_id.password}" placeholder="Password">
 
                     <button type="submit"> Save </button>
                     <button type="cancel"> <a href="/home"> Cancel </a> </button>
@@ -60,11 +67,18 @@
                     <div class="footer_left">
                         <p class="footer_title"> Medlink </p>
                         <ul class="footer_links">
-                            <li> <a href="/home"> Home </a> </li>
-                            <li> <a href="/browse"> Browse </a></li>
-                            <li> <a href="/account-type-login"> Log In </a> </li>
-                            <li> <a href="/account-type-signup"> Sign Up </a></li>
-                            <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                            <li><a href="/home">Home</a></li>
+                                                                    <li><a href="/browse">Browse</a></li>
+
+                                                                    <#if sessionPatient??>
+                                                                        <!-- Only show if the user is logged in -->
+                                                                        <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                        <li><a href="/logout">Logout</a></li>
+                                                                    <#else>
+                                                                        <li><a href="/account-type-login">Log In</a></li>
+                                                                        <li><a href="/account-type-signup">Sign Up</a></li>
+                                                                    </#if>
+                                                                        <li><a href="/SysAdmin.html">Admin Panel</a></li>
                         </ul>
                     </div>
                 </div>

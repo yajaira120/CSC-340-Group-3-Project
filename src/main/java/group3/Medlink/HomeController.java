@@ -1,11 +1,14 @@
 package group3.Medlink;
 
+import group3.Medlink.patient.Patient;
 import group3.Medlink.provider.ProviderService;
 import group3.Medlink.provider.Provider;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,6 +17,11 @@ public class HomeController {
 
     @Autowired
     private ProviderService providerService;
+
+    @ModelAttribute("sessionPatient")
+    public Patient addPatientToModel(HttpSession session) {
+        return (Patient) session.getAttribute("patient");
+    }
 
     @GetMapping({"", "/", "/home", "/dashboard"})
     public String showDashBoard(){
@@ -36,30 +44,5 @@ public class HomeController {
     public String chooseAccountTypeLogin(){
         return "pages/choose_account_type_login";
     }
-
-    @GetMapping("/confirmation-page-patient")
-    public String confirmationPagePatient(){
-        return "pages/confirmation_page";
-    }
-
-    @GetMapping("/account-details")
-    public String accountDetails(){
-        return "pages/patient_profile/account_details";
-    }
-    @GetMapping("/edit-account-details")
-    public String editAccountDetails(){
-        return "pages/patient_profile/edit_account_details";
-    }
-
-    @GetMapping("/patient-appointments")
-    public String patientAppointments(){
-        return "pages/patient_profile/patient_appointments";
-    }
-
-    @GetMapping("/providers-for-patients")
-    public String providersForPatient(){
-        return "pages/patient_profile/providers_for_patients";
-    }
-
 
 }

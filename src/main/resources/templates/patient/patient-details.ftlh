@@ -16,12 +16,20 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "/home"> Home </a></li>
-                    <li> <a href = "/browse"> Browse </a></li>
-                    <li> <a href = "/account-type-login"> Log In </a></li>
-                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
-                </ul>
+                    <li><a href="/home">Home</a></li>
+                                        <li><a href="/browse">Browse</a></li>
+
+                                        <#if sessionPatient??>
+                                            <!-- Only show if the user is logged in -->
+                                            <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                            <li><a href="/logout">Logout</a></li>
+                                        <#else>
+                                            <li><a href="/account-type-login">Log In</a></li>
+                                            <li><a href="/account-type-signup">Sign Up</a></li>
+                                        </#if>
+                                            <li><a href="/SysAdmin.html">Admin Panel</a></li>
+
+                     </ul>
             </div>
         </div>
 
@@ -36,32 +44,31 @@
 
                 </div>
 
-                <h1 id="user_name"> ${patient.name} </h1>
+                <h1 id="user_name"> ${patient_id.name} </h1>
 
             <div class="nav_links">
                 <ul>
-                    <li><a href="${patient.patient_id}"> Patient Details </a></li>
-                    <li><a href="/patient-appointments"> Appointments </a></li>
-                    <li><a href="/providers-for-patients"> Healthcare Providers & Reviews </a></li>
-                    <li><a href="/account-details"> Account Details </a></li>
+                    <li><a href="${patient_id.patient_id}"> Patient Details </a></li>
+                    <li><a href="/patients/patient_id-appointments"> Appointments </a></li>
+                    <li><a href="/patients/providers-for-patients"> Healthcare Providers & Reviews </a></li>
                 </ul>
             </div>
             </div>
 
             <div class="main_content_profile">
                 <h3> Patient Details </h3>
-                <p><strong> Name: </strong> ${patient.name!"N/A"} </p>
-                <p><strong> Date of Birth: </strong> ${patient.dob!"N/A"} </p>
-                <p><strong> Address: </strong> ${patient.address!"N/A"} </p>
-                <p><strong> Phone Number: </strong> ${patient.phone_number!"N/A"} </p>
-                <p><strong> Email: </strong> ${patient.email!"N/A"} </p>
-                <p><strong> Insurance Provider: </strong> ${patient.insurance_provider!"N/A"} </p>
+                <p><strong> Name: </strong> ${patient_id.name!"N/A"} </p>
+                <p><strong> Date of Birth: </strong> ${patient_id.dob!"N/A"} </p>
+                <p><strong> Address: </strong> ${patient_id.address!"N/A"} </p>
+                <p><strong> Phone Number: </strong> ${patient_id.phone_number!"N/A"} </p>
+                <p><strong> Email: </strong> ${patient_id.email!"N/A"} </p>
+                <p><strong> Insurance Provider: </strong> ${patient_id.insurance_provider!"N/A"} </p>
 
                 <h4> Medical History: </h4>
-                <p> ${patient.medical_history!"N/A"}</p>
+                <p> ${patient_id.medical_history!"N/A"}</p>
 
                 <button>
-                    <a href="update/${patient.patient_id}"> Update </a>
+                    <a href="/patients/update/${patient_id.patient_id}"> Update </a>
                 </button>
 
             </div>
@@ -74,11 +81,19 @@
                     <div class="footer_left">
                         <p class="footer_title"> Medlink </p>
                         <ul class="footer_links">
-                            <li> <a href="/home"> Home </a> </li>
-                            <li> <a href="/browse"> Browse </a></li>
-                            <li> <a href="/account-type-login"> Log In </a> </li>
-                            <li> <a href="/account-type-signup"> Sign Up </a></li>
-                            <li> <a href="sysadmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                            <li><a href="/home">Home</a></li>
+                                                <li><a href="/browse">Browse</a></li>
+
+                                                <#if sessionPatient??>
+                                                    <!-- Only show if the user is logged in -->
+                                                    <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                    <li><a href="/logout">Logout</a></li>
+                                                <#else>
+                                                    <li><a href="/account-type-login">Log In</a></li>
+                                                    <li><a href="/account-type-signup">Sign Up</a></li>
+                                                </#if>
+                                                    <li><a href="/SysAdmin.html">Admin Panel</a></li>
+
                         </ul>
                     </div>
 

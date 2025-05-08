@@ -38,7 +38,7 @@
             </button>
 
             <button class="confirmation_buttons">
-                <a href="${patient.patient_id}">
+                <a href="${patient_id.patient_id}">
                 <p> Go to Profile </p>
                 </a>
             </button>

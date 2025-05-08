@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="patient-list">
+        <div class="patient_id-list">
             <h1> ${title} </h1>
             <a href= "/patients/createPatientForm"> Create New Patient </a>
 
@@ -41,13 +41,13 @@
                     <th> Date of Birth </th>
                     <th> Email </th>
                 </tr>
-                <#list patientList as patient>
+                <#list patientList as patient_id>
                 <tr>
-                    <td> ${provider.provider_id} </td>
-                    <td> ${provider.name}</td>
-                    <td> ${provider.location}</td>
-                    <td> ${provider.dob?c}</td>
-                    <td> ${provider.email}</td>
+                    <td> ${provider_id.provider_id} </td>
+                    <td> ${provider_id.name}</td>
+                    <td> ${provider_id.location}</td>
+                    <td> ${provider_id.dob?c}</td>
+                    <td> ${provider_id.email}</td>
 
                 </tr>
                 </#list>

@@ -16,11 +16,18 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "../Home.html"> Home </a></li>
-                    <li> <a href = "../browse.html"> Browse </a></li>
-                    <li> <a href = "../log_in.html"> Log In </a></li>
-                    <li> <a href = "../choose_account_type.html"> Sign Up </a></li>
-                    <li> <a href="../SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li><a href="/home">Home</a></li>
+                                                            <li><a href="/browse">Browse</a></li>
+
+                                                            <#if sessionPatient??>
+                                                                <!-- Only show if the user is logged in -->
+                                                                <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                <li><a href="/logout">Logout</a></li>
+                                                            <#else>
+                                                                <li><a href="/account-type-login">Log In</a></li>
+                                                                <li><a href="/account-type-signup">Sign Up</a></li>
+                                                            </#if>
+                                                                <li><a href="/SysAdmin.html">Admin Panel</a></li>
                 </ul>
             </div>
         </div>
@@ -51,7 +58,7 @@
             <main class="list_of_providers">
                 <h2>Healthcare Providers</h2>
                 <div class="provider_list">
-                    <div class="provider">
+                    <div class="provider_id">
                         <h3>Dr. John Doe</h3>
                         <p><strong>Specialty:</strong> Dermatology</p>
                         <p><strong>Rating:</strong> ★★★★☆ (4.7/5)</p>
@@ -59,7 +66,7 @@
                             <a href="../browse.html">View Profile</a>
                         </button>
                     </div>
-                    <div class="provider">
+                    <div class="provider_id">
                         <h3>Dr. Mike Johnson</h3>
                         <p><strong>Specialty:</strong> Pediatrics</p>
                         <p><strong>Rating:</strong> ★★★☆☆ (3.9/5)</p>
@@ -68,7 +75,7 @@
                         </button>
 
                     </div>
-                    <div class="provider">
+                    <div class="provider_id">
                         <h3>Dr. Lisa White</h3>
                         <p><strong>Specialty:</strong> Internal Medicine</p>
                         <p><strong>Rating:</strong> ★★★★★ (5/5)</p>
@@ -76,7 +83,7 @@
                             <a href="../browse.html">View Profile</a>
                         </button>
                     </div>
-                    <div class="provider">
+                    <div class="provider_id">
                         <h3>Dr. Alex Cheng</h3>
                         <p><strong>Specialty:</strong> Orthopedics</p>
                         <p><strong>Rating:</strong> ★★★★☆ (4.6/5)</p>
@@ -95,11 +102,18 @@
                     <div class="footer_left">
                         <p class="footer_title"> Medlink </p>
                         <ul class="footer_links">
-                            <li> <a href="../Home.html"> Home </a> </li>
-                            <li> <a href="../browse.html"> Browse </a></li>
-                            <li> <a href="../log_in.html"> Log In </a> </li>
-                            <li> <a href="../choose_account_type.html"> Sign Up </a></li>
-                            <li> <a href="../sysadmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                            <li><a href="/home">Home</a></li>
+                                                                    <li><a href="/browse">Browse</a></li>
+
+                                                                    <#if sessionPatient??>
+                                                                        <!-- Only show if the user is logged in -->
+                                                                        <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                        <li><a href="/logout">Logout</a></li>
+                                                                    <#else>
+                                                                        <li><a href="/account-type-login">Log In</a></li>
+                                                                        <li><a href="/account-type-signup">Sign Up</a></li>
+                                                                    </#if>
+                                                                        <li><a href="/SysAdmin.html">Admin Panel</a></li>
                         </ul>
                     </div>
 

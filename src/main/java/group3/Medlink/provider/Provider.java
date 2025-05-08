@@ -1,10 +1,13 @@
 package group3.Medlink.provider;
 
 
+import group3.Medlink.appointment.Appointment;
+import group3.Medlink.review.Review;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Columns;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table (name = "provider")
@@ -12,7 +15,7 @@ public class Provider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name="provider_id")
     private int provider_id;
 
     @Column(nullable = false)
@@ -60,6 +63,13 @@ public class Provider {
     @Column
     private String qualifications;
 
+    @OneToMany(mappedBy = "provider")
+    private List<Appointment> appointments;
+
+    @OneToMany(mappedBy = "provider")
+    private List<Review> reviews;
+
+
     public Provider(){
 
 
@@ -70,7 +80,7 @@ public class Provider {
     public int getProvider_id(){
         return provider_id;
     }
-    public void setProvider_id(int provider_id){
+    public void setProvider_id(int id){
         this.provider_id = provider_id;
     }
 
@@ -191,4 +201,17 @@ public class Provider {
         this.qualifications = qualifications;
     }
 
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }

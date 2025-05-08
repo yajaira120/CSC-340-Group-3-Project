@@ -16,11 +16,19 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "/home"> Home </a></li>
-                    <li> <a href = "/browse"> Browse </a></li>
-                    <li> <a href = "/account-type-login"> Log In </a></li>
-                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li><a href="/home">Home</a></li>
+                                                                <li><a href="/browse">Browse</a></li>
+
+                                                                 <#if sessionPatient??>
+                                                                    <!-- Only show if the user is logged in -->
+                                                                    <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                    <li><a href="/logout">Logout</a></li>
+                                                                 <#else>
+                                                                    <li><a href="/account-type-login">Log In</a></li>
+                                                                    <li><a href="/account-type-signup">Sign Up</a></li>
+                                                                 </#if>
+
+                                                                <li><a href="/SysAdmin.html">Admin Panel</a></li>
                 </ul>
             </div>
         </div>
@@ -44,20 +52,20 @@
             </div>
 
 
-            <div class="provider-list">
-                    <#list providerList as provider>
-                        <div class="provider-card">
-                            <img src="/images/icon_1.png" alt="Provider 1" class="provider-image">
+            <div class="provider_id-list">
+                    <#list providerList as provider_id>
+                        <div class="provider_id-card">
+                            <img src="/images/icon_1.png" alt="Provider 1" class="provider_id-image">
 
-                            <div class="provider-info">
-                                <h2 class="provider-name">${provider.name!"N/A"}</h2>
-                                <p class="provider-location">${provider.location!"N/A"}</p>
-                                <p class="provider-specialty">${provider.specialty!"N/A"}</p>
+                            <div class="provider_id-info">
+                                <h2 class="provider_id-name">${provider_id.name!"N/A"}</h2>
+                                <p class="provider_id-location">${provider_id.location!"N/A"}</p>
+                                <p class="provider_id-specialty">${provider_id.specialty!"N/A"}</p>
 
                                 <div class="rating-and-button">
-                                    <p class="provider-rating"> Rating: ${provider.rating!"N/A"}</p>
+                                    <p class="provider_id-rating"> Rating: ${provider_id.rating!"N/A"}</p>
 
-                                    <a href="/provider/${provider.provider_id}" class="profile-button">View Profile</a>
+                                    <a href="/provider_id/browse/${provider_id.provider_id}" class="profile-button">View Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -66,22 +74,30 @@
         </div>
 
         <div class="bottom_header">
-            <footer>
-                <div class="footer_content">
-                    <div class="footer_left">
-                        <p class="footer_title"> Medlink </p>
-                        <ul class="footer_links">
-                            <li> <a href="/home"> Home </a> </li>
-                            <li> <a href="/browse"> Browse </a></li>
-                            <li> <a href="/account-type-login"> Log In </a> </li>
-                            <li> <a href="/account-type-signup"> Sign Up </a></li>
-                            <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
-                        </ul>
-                    </div>
+                    <footer>
+                        <div class="footer_content">
+                            <div class="footer_left">
+                                <p class="footer_title"> Medlink </p>
+                                <ul class="footer_links">
 
+                                    <li><a href="/home">Home</a></li>
+                                    <li><a href="/browse">Browse</a></li>
+
+                                    <#if sessionPatient??>
+                                        <!-- Only show if the user is logged in -->
+                                        <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                        <li><a href="/logout">Logout</a></li>
+                                    <#else>
+                                        <li><a href="/account-type-login">Log In</a></li>
+                                        <li><a href="/account-type-signup">Sign Up</a></li>
+                                    </#if>
+
+                                    <li><a href="/SysAdmin.html">Admin Panel</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </footer>
                 </div>
-            </footer>
-        </div>
-
     </body>
 </html>

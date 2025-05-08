@@ -1,9 +1,11 @@
 package group3.Medlink.review;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import group3.Medlink.appointment.AppointmentService;
 
@@ -41,7 +43,6 @@ public class ReviewController {
         return ResponseEntity.ok(reviewService.getReviewById(review_id));
     }
 
-
     /**
      * Create a review
      * http://localhost:8080/reviews/2/3/ {"rating": 5, "comment": "Amazing work!"}
@@ -51,14 +52,17 @@ public class ReviewController {
      * @return message
      */
     @PostMapping("/create")
-    public ResponseEntity<String> addReview(@RequestParam int patient_id, @RequestParam int provider_id, @RequestBody Review review) {
+    public String addReview(@RequestParam int patient_id, @RequestParam int provider_id,
+                            @RequestBody Review review, HttpSession session, Model model) {
         boolean hasAppointment = appointmentService.checkIfAppointmentExists(patient_id, provider_id);
 
         if(!hasAppointment){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can only review providers you have had an appointment with.");
+            model.addAttribute("error", "You can only review providers you have had an appointment with.");
+            return "redirect:/error";
         }
         reviewService.addReview(review);
-        return ResponseEntity.ok("Review added successfully.");
+        model.addAttribute("message", "Review added successfully.");
+        return "review/review";
     }
 
     /**

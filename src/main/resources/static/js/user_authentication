@@ -1,0 +1,26 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Check login status from backend
+    fetch('/auth/status')
+        .then(response => response.json())
+        .then(isLoggedIn => {
+            if (isLoggedIn) {
+                document.querySelectorAll(".navbar ul li a[href='/account-type-login'], .navbar ul li a[href='/account-type-signup']")
+                    .forEach(element => element.style.display = "none");
+
+                const headerTitle = document.querySelector(".header h1");
+                if (headerTitle) headerTitle.innerHTML = "Welcome back to Medlink!";
+            }
+        });
+
+
+// Logout button logic
+    const logoutButton = document.getElementById("logoutButton");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+            if (confirm("Are you sure you want to log out?")) {
+                fetch('/auth/logout', { method: 'POST' })
+                    .then(() => window.location.href = "/account-type-login"); // Redirect after logout
+            }
+        });
+    }

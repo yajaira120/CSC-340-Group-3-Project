@@ -1,6 +1,7 @@
 package group3.Medlink.provider;
 
 
+import group3.Medlink.appointment.Appointment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,8 +31,7 @@ public class ProviderController {
     public Object getChosenUser(@PathVariable int provider_id, Model model){
         model.addAttribute("provider", providerService.getProviderById(provider_id));
         model.addAttribute("title", "Provider #: " + provider_id);
-        return "provider/provider-details";
-
+        return "provider-details";
     }
 
     @PostMapping("/register")
@@ -45,5 +45,19 @@ public class ProviderController {
         providerService.updateProvider(provider_id, provider);
         return new ResponseEntity<>(providerService.getProviderById(provider_id), HttpStatus.OK);
     }
+
+    /**
+     * Provider profile from browsing, for users
+     * @param id
+     * @param model
+     * @return
+     */
+    @GetMapping("/browse/{id}")
+    public Object getProviderProfile(@PathVariable int id, Model model){
+        model.addAttribute("provider", providerService.getProviderById(id));
+        model.addAttribute("title", "Provider #: " + id);
+        return "provider-profile";
+    }
+
 
 }

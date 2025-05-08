@@ -4,6 +4,8 @@ import group3.Medlink.patient.Patient;
 import group3.Medlink.provider.Provider;
 import jakarta.persistence.*;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "appointment")
@@ -13,22 +15,22 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int appointment_id;
 
-    @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
+    @Column (name = "date")
+    private LocalDate date;
+
+    @Column (name = "time")
+    private LocalTime time;
+
+    @Column(name = "is_booked")
+    private boolean booked;
 
     @ManyToOne
-    @JoinColumn(name = "provider_id", nullable = false)
-    private Provider provider;
+    @JoinColumn(name = "patient_id")
+    private Patient patient_id;
 
-    @Column(nullable = false)
-    private Date appointment_date;
-
-    @Column(nullable = false)
-    private Time appointment_time;
-
-    @Column
-    private String status;
+    @ManyToOne
+    @JoinColumn(name = "provider_id")
+    private Provider provider_id;
 
     //Constructor
     public Appointment() {
@@ -45,46 +47,43 @@ public class Appointment {
 
     // patient
     public Patient getPatient() {
-        return patient;
+        return patient_id;
     }
 
     public void setPatient(Patient patient) {
-        this.patient = patient;
+        this.patient_id = patient;
     }
 
     //provider
     public Provider getProvider() {
-        return provider;
+        return provider_id;
     }
 
     public void setProvider(Provider provider) {
-        this.provider = provider;
+        this.provider_id = provider;
     }
 
-    //appointment_date
-    public Date getAppointment_date() {
-        return appointment_date;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setAppointment_date(Date appointment_date) {
-        this.appointment_date = appointment_date;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    //appointment_time
-    public Time getAppointment_time() {
-        return appointment_time;
+    public LocalTime getTime() {
+        return time;
     }
 
-    public void setAppointment_time(Time appointment_time) {
-        this.appointment_time = appointment_time;
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 
-    //status
-    public String getStatus() {
-        return status;
+    public boolean isBooked() {
+        return booked;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBooked(boolean booked) {
+        this.booked = booked;
     }
 }
