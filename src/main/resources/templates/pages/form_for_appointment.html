@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Book an Appointment </title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="logo">
+                <img src = "images/logo-medlink.png" alt="Medlink" width="100" height="100"/>
+            </div>
+            <h1> <a href="Home.html"> Medlink </a> </h1>
+            
+            <div class="navbar">
+                <ul>
+                    <li> <a href = "Home.html"> Home </a></li>
+                    <li> <a href = "browse.html"> Browse </a></li>
+                    <li> <a href = "choose_account_type_login.html"> Log In </a></li>
+                    <li> <a href = "choose_account_type.html"> Sign Up </a></li>
+                    <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="appointment_form">
+        <div class="make_appointment">
+            <h1> Make an Appointment </h1>
+
+            <form id="appointment_box">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name">
+        
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email">
+        
+                <label for="reason">Reason for Visit:</label>
+                <textarea id="reason" name="reason" rows="2"></textarea>
+
+                <label for="date">Appointment Date</label>
+                <input type="date" id="date" name="date" >
+        
+                <label for="time">Appointment Time</label>
+                <input type="time" id="time" name="time">
+        
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+        
+                <button type="submit">
+                    <a href="confirmation_of_appointment.html"> Schedule Appointment </a>
+                </button>
+            </form>
+        </div>
+        </div>
+
+
+
+        <div class="bottom_header">
+            <footer>
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <p class="footer_title"> Medlink </p>
+                        <ul class="footer_links">
+                            <li> <a href="Home.html"> Home </a> </li>
+                            <li> <a href="browse.html"> Browse </a></li>
+                            <li> <a href="choose_account_type_login.html"> Log In </a> </li>
+                            <li> <a href="choose_account_type.html"> Sign Up </a></li>
+                            <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                        </ul>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

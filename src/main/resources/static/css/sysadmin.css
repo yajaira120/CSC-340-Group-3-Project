@@ -1,122 +1,113 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f5f7fa;
+    color: #333;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    background: #007bff;
-    padding: 10px 20px;
-    color: white;
-}
-.nav-left {
-    display: flex;
-    align-items: center;
+.header {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
 }
 
-.nav-left .logo {
-    width: 60px; 
-    height: auto;
-    margin-right: 10px;
-    vertical-align: middle; 
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #2a4365;
 }
 
-.nav-right a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-.admin-container {
-    display: flex;
-}
-
-/* Sidebar Styling */
-.sidebar {
-    background: #f4f4f4;
-    padding: 20px;
-    width: 220px;
-    position: fixed;
-    height: 100%;
-    border-right: 2px solid #ddd;
-}
-
-/* Main Content Styling */
-.admin-content {
-    margin-left: 240px;
-    padding: 20px;
-}
-
-/* Section Styling */
-.admin-section {
+.stats, .user-management {
+    margin: 2rem auto;
+    max-width: 900px;
     background: #fff;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
-/* Section Title (Collapsible) */
-.admin-section h2 {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+.stats h2, .user-management h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    color: #2a4365;
 }
 
-/* Hide Content by Default */
-.content {
-    display: none;
-    padding: 10px;
+.stats ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Table Styling */
+.stats li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 1rem;
+}
+
+thead {
+    background-color: #e2e8f0;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
 }
 
 th {
-    background: #f4f4f4;
+    font-weight: bold;
+    color: #2d3748;
 }
 
-/* Buttons */
+tr:hover {
+    background-color: #f1f5f9;
+}
+
 button {
-    background: #007bff;
+    padding: 6px 12px;
+    margin-right: 6px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #3182ce;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b6cb0;
+}
+
+form {
+    display: inline;
+}
+.moderation-tools {
+    margin: 2rem auto;
+    max-width: 900px;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.admin-button {
+    padding: 10px 20px;
+    background-color: #38a169;
     color: white;
     border: none;
-    padding: 8px 12px;
-    margin: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 1rem;
 }
 
-button:hover {
-    background: #0056b3;
-}
-
-/* Red for Ban/Suspend */
-.ban-btn, .suspend-btn {
-    background: red;
-}
-
-.ban-btn:hover, .suspend-btn:hover {
-    background: darkred;
-}
-
-/* Green for Unban/Unsuspend */
-.unban-btn, .unsuspend-btn {
-    background: green;
-}
-
-.unban-btn:hover, .unsuspend-btn:hover {
-    background: darkgreen;
+.admin-button:hover {
+    background-color: #2f855a;
 }

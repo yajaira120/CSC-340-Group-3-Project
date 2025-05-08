@@ -4,6 +4,7 @@ import group3.Medlink.patient.Patient;
 import group3.Medlink.provider.Provider;
 import group3.Medlink.reply.Reply;
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -29,11 +30,14 @@ public class Review {
     @Column(nullable = false, length = 500)
     private String comment;
 
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime created_at = LocalDateTime.now();
+    @Column(nullable = false, updatable = false, name = "created_at")
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(nullable = false)
-    private LocalDateTime updated_at = LocalDateTime.now();
+    @Column(nullable = false, name = "updated_at")
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    @Column(name = "sysadmin_comment")
+    private String sysadminComment;
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
     private List<Reply> replies;
@@ -43,6 +47,7 @@ public class Review {
     public int getReview_id() {
         return review_id;
     }
+
     public void setReview_id(int review_id) {
         this.review_id = review_id;
     }
@@ -50,6 +55,7 @@ public class Review {
     public Patient getPatient() {
         return patient;
     }
+
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
@@ -57,6 +63,7 @@ public class Review {
     public Provider getProvider() {
         return provider;
     }
+
     public void setProvider(Provider provider) {
         this.provider = provider;
     }
@@ -64,6 +71,7 @@ public class Review {
     public int getRating() {
         return rating;
     }
+
     public void setRating(int rating) {
         this.rating = rating;
     }
@@ -71,33 +79,40 @@ public class Review {
     public String getComment() {
         return comment;
     }
+
     public void setComment(String comment) {
         this.comment = comment;
     }
 
-    public LocalDateTime getCreated_at() {
-        return created_at;
-    }
-    public void setCreated_at(LocalDateTime created_at) {
-        this.created_at = created_at;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public LocalDateTime getUpdated_at() {
-        return updated_at;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
-        this.updated_at = updated_at;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getSysadminComment() {
+        return sysadminComment;
+    }
+
+    public void setSysadminComment(String sysadminComment) {
+        this.sysadminComment = sysadminComment;
     }
 
     public List<Reply> getReplies() {
         return replies;
     }
+
     public void setReplies(List<Reply> replies) {
         this.replies = replies;
     }
-
-
-
-
 }

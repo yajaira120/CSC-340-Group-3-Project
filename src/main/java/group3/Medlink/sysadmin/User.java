@@ -14,15 +14,17 @@ public class User {
 
     private String email;
 
-    private String role; // e.g., "Customer", "Provider", etc.
+    private String role; // "provider" or "patient"
 
-    private String accountStatus; // e.g., "Active", "Banned", "Suspended"
+    @Column(name = "account_status")
+    private String accountStatus; // "active", "banned", etc.
 
-    // Default constructor (required by JPA)
+    // Constructors
     public User() {
     }
 
-    public User(String username, String email, String role, String accountStatus) {
+    public User(Long id, String username, String email, String role, String accountStatus) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.role = role;
@@ -30,7 +32,6 @@ public class User {
     }
 
     // Getters and setters
-
     public Long getId() {
         return id;
     }

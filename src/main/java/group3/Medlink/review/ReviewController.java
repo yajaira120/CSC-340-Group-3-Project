@@ -1,14 +1,13 @@
 package group3.Medlink.review;
 
+import group3.Medlink.appointment.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import group3.Medlink.appointment.AppointmentService;
 
 import java.util.List;
-
 
 @Controller
 @RequestMapping("/reviews")
@@ -20,70 +19,70 @@ public class ReviewController {
     @Autowired
     private AppointmentService appointmentService;
 
-    /**
-     * Get all reviews
-     * http://localhost:8080/reviews/all
-     * @return list of all reviews
-     */
+    // View all reviews in the moderation page for SysAdmin
+    @GetMapping("/view")
+    public String viewReviews(Model model) {
+        List<Review> reviews = reviewService.getAllReviews();
+        model.addAttribute("reviews", reviews);
+        return "review-moderation"; // Matches templates/review-moderation.ftlh
+    }
+
+    // Handle sysadmin comment submission
+    @PostMapping("/comment/{review_id}")
+    public String addAdminComment(@PathVariable int review_id,
+                                  @RequestParam("comment") String comment,
+                                  Model model) {
+        Review review = reviewService.getReviewById(review_id);
+
+        if (review != null) {
+            review.setSysadminComment(comment); // make sure Review.java has this setter
+            reviewService.addReview(review);
+            model.addAttribute("message", "Admin comment added successfully.");
+        } else {
+            model.addAttribute("error", "Review not found.");
+        }
+
+        return "redirect:/reviews/view";
+    }
+
+    // API endpoint: get all reviews (JSON)
     @GetMapping("/all")
-    public ResponseEntity<List<Review>> getAllReviews() {
+    public ResponseEntity<List<Review>> getAllReviewsApi() {
         return ResponseEntity.ok(reviewService.getAllReviews());
     }
 
-    /**
-     * Get all reviews by reviewId
-     * http://localhost:8080/reviews/2
-     * @param review_id
-     * @return list of reviews by reviewId
-     */
+    // API endpoint: get review by ID (JSON)
     @GetMapping("/{review_id}")
-    public ResponseEntity<Review> getReviewByProvider(@PathVariable int review_id) {
+    public ResponseEntity<Review> getReviewById(@PathVariable int review_id) {
         return ResponseEntity.ok(reviewService.getReviewById(review_id));
     }
 
-
-    /**
-     * Create a review
-     * http://localhost:8080/reviews/2/3/ {"rating": 5, "comment": "Amazing work!"}
-     * @param patient_id patientId
-     * @param provider_id providerId
-     * @param review review
-     * @return message
-     */
+    // API endpoint: create a new review
     @PostMapping("/create")
-    public ResponseEntity<String> addReview(@RequestParam int patient_id, @RequestParam int provider_id, @RequestBody Review review) {
+    public ResponseEntity<String> addReview(@RequestParam int patient_id,
+                                            @RequestParam int provider_id,
+                                            @RequestBody Review review) {
         boolean hasAppointment = appointmentService.checkIfAppointmentExists(patient_id, provider_id);
 
-        if(!hasAppointment){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can only review providers you have had an appointment with.");
+        if (!hasAppointment) {
+            return ResponseEntity.status(403).body("You can only review providers you have had an appointment with.");
         }
+
         reviewService.addReview(review);
         return ResponseEntity.ok("Review added successfully.");
     }
 
-    /**
-     * Delete review
-     * http://localhost:8080/reviews/2
-     * @param review_id reviewId
-     * @return message
-     */
+    // API endpoint: delete a review by ID
     @DeleteMapping("/delete/{review_id}")
     public ResponseEntity<String> deleteReview(@PathVariable int review_id) {
         reviewService.deleteReview(review_id);
         return ResponseEntity.ok("Review deleted.");
     }
 
-    /**
-     * Get review by providerId
-     * http://localhost:8080/reviews/3/5
-     * @param review_id reviewId
-     * @param provider_id providerId
-     * @return message
-     */
+    // API endpoint: get review by review ID and provider ID (if needed)
     @GetMapping("/{review_id}/{provider_id}")
-    public ResponseEntity<Review> getReviewByProvider(@PathVariable int review_id, @PathVariable int provider_id) {
+    public ResponseEntity<Review> getReviewByProvider(@PathVariable int review_id,
+                                                      @PathVariable int provider_id) {
         return ResponseEntity.ok(reviewService.getReviewById(review_id));
     }
-
-
 }

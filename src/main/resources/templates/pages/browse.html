@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Medlink </title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="logo">
+                <img src = "images/logo-medlink.png" alt="Medlink" width="100" height="100"/>
+            </div>
+            <h1> <a href="Home.html"> Medlink </a> </h1>
+            
+            <div class="navbar">
+                <ul>
+                    <li> <a href = "Home.html"> Home </a></li>
+                    <li> <a href = "browse.html"> Browse </a></li>
+                    <li> <a href = "choose_account_type_login.html"> Log In </a></li>
+                    <li> <a href = "choose_account_type.html"> Sign Up </a></li>
+                    <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="browse_content">
+            <div class="search">
+                <form>
+                    <input type = "text" class="search-input" placeholder="Search...">
+                
+                    <input type= "text" class="search-input" name = "location" class="location" placeholder="Location...">
+                
+                    <input type="text" class="search-input" name = "insurance" class="insurance" placeholder="Insurance...">
+
+                    <button class="search-submit">
+                        <img src="images/search-icon.png" alt="search" style="width:20px; height:20px;">
+                    </button> 
+                </form>
+            </div>
+
+
+            <div class="provider-list">
+                <div class="provider-card">
+                    <img src="images/icon_1.png" alt="Provider 1" class="provider-image">
+                    <div class="provider-info">
+                        <h2 class="provider-name">Dr. John Doe</h2>
+                        <p class="provider-location">New York, NY</p>
+                        <p class="provider-specialty">Cardiologist</p>
+                        
+                        <div class="rating-and-button">
+                            <p class="provider-rating">Rating: ★★★★☆</p>
+                        
+                            <a href="service_provider_page.html" class="profile-button">View Profile</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="provider-card">
+                    <img src="images/icon_2.png" alt="Provider 2" class="provider-image">
+                    <div class="provider-info">
+                        <h2 class="provider-name">Dr. Jane Smith</h2>
+                        <p class="provider-location">Los Angeles, CA</p>
+                        <p class="provider-specialty">Orthopedist</p>
+                        
+                        <div class="rating-and-button">
+                            <p class="provider-rating">Rating: ★★★★★</p>
+                        
+                            <a href="profile2.html" class="profile-button">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_header">
+            <footer>
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <p class="footer_title"> Medlink </p>
+                        <ul class="footer_links">
+                            <li> <a href="Home.html"> Home </a> </li>
+                            <li> <a href="browse.html"> Browse </a></li>
+                            <li> <a href="choose_account_type_login.html"> Log In </a> </li>
+                            <li> <a href="choose_account_type.html"> Sign Up </a></li>
+                            <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                        </ul>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

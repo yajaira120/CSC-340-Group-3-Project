@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Medlink </title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="logo">
+                <img src = "images/logo-medlink.png" alt="Medlink" width="100" height="100"/>
+            </div>
+            <h1> <a href="Home.html"> Medlink </a> </h1>
+            
+            <div class="navbar">
+                <ul>
+                    <li> <a href = "Home.html"> Home </a></li>
+                    <li> <a href = "browse.html"> Browse </a></li>
+                    <li> <a href = "choose_account_type_login.html"> Log In </a></li>
+                    <li> <a href = "choose_account_type.html"> Sign Up </a></li>
+                    <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="user_profile_container">
+            <div class="left_sidebar">
+                <div class="profile_section">
+                    <label for ="file_input">
+                        <img id="profile_img" src="images/default_profile.jpg" alt="Profile Picture">
+                    </label>
+
+                    <input type="file" id="profile_picture" accept="image/*" style="display:none;">
+                    
+                </div>
+
+                <h1 id="user_name"> John Doe </h1>
+
+            <div class="nav_links">
+                <ul>
+                    <li><a href="user_profile.html"> Patient Details </a></li>
+                    <li><a href="user_profile_pages/appointments.html"> Appointments </a></li>
+                    <li><a href="user_profile_pages/healthcare_providers.html"> Healthcare Providers & Reviews </a></li>
+                    <li><a href="user_profile_pages/account_details_user.html"> Account Details </a></li>
+                    <li><a href="user_profile_pages/write_a_review.html"> Billing </a></li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="main_content_profile">
+                <h3> Patient Details </h3>
+                <p><strong> First Name: </strong> John </p>
+                <p><strong> Last Name: </strong> Doe </p>
+                <p><strong> Date of Birth: </strong> January 1, 1999 </p>
+                <p><strong> Insurance: </strong> Blue Cross Blue Shield </p>
+                
+                <h4> Medical History: </h4>
+                <p> John has a history of hypertension and had a previous surgery for appendicitis.</p>
+            </div>
+
+        </div>
+
+        <div class="bottom_header">
+            <footer>
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <p class="footer_title"> Medlink </p>
+                        <ul class="footer_links">
+                            <li> <a href="Home.html"> Home </a> </li>
+                            <li> <a href="browse.html"> Browse </a></li>
+                            <li> <a href="choose_account_type_login.html"> Log In </a> </li>
+                            <li> <a href="choose_account_type.html"> Sign Up </a></li>
+                            <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                        </ul>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

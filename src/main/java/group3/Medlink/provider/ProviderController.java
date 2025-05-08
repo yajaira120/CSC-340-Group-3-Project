@@ -1,49 +1,48 @@
 package group3.Medlink.provider;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/provider")
 public class ProviderController {
-    
+
     @Autowired
     private ProviderService providerService;
 
     @GetMapping("/all")
-    public Object getAllProviders(Model model){
-        model.addAttribute("providerList", providerService.getAllProviders());
-        model.addAttribute("title", "All Providers");
-        return "browse";
+    public String getAllProviders(Model model) {
+        List<Provider> providers = providerService.getAllProviders();
+        model.addAttribute("providers", providers);
+        return "provider_list";
     }
 
-    @GetMapping("/{provider_id}")
-    public Object getChosenUser(@PathVariable int provider_id, Model model){
-        model.addAttribute("provider", providerService.getProviderById(provider_id));
-        model.addAttribute("title", "Provider #: " + provider_id);
-        return "provider/provider-details";
-
+    @GetMapping("/delete/{id}")
+    public String deleteProvider(@PathVariable Long id) {
+        providerService.deleteProvider(id);
+        return "redirect:/provider/all";
     }
 
-    @PostMapping("/register")
-    public Object addNewProvider(@RequestBody Provider provider){
-        providerService.addNewProvider(provider);
-        return new ResponseEntity<>("New provider Created!", HttpStatus.OK);
+    @GetMapping("/edit/{id}")
+    public String editProviderForm(@PathVariable Long id, Model model) {
+        Provider provider = providerService.getProviderById(id);
+        model.addAttribute("provider", provider);
+        return "provider_form";
     }
 
-    @PutMapping("/update/{provider_id}")
-    public Object updateProvider(@PathVariable int provider_id,@RequestBody Provider provider){
-        providerService.updateProvider(provider_id, provider);
-        return new ResponseEntity<>(providerService.getProviderById(provider_id), HttpStatus.OK);
+    @PostMapping("/save")
+    public String saveProvider(@ModelAttribute("provider") Provider provider) {
+        providerService.saveProvider(provider);
+        return "redirect:/provider/all";
     }
 
+    @GetMapping("/add")
+    public String addProviderForm(Model model) {
+        model.addAttribute("provider", new Provider());
+        return "provider_form";
+    }
 }

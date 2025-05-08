@@ -20,7 +20,7 @@
                     <li> <a href = "/browse"> Browse </a></li>
                     <li> <a href = "/account-type-login"> Log In </a></li>
                     <li> <a href = "/account-type-signup"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
                 </ul>
             </div>
         </div>
@@ -74,11 +74,11 @@
                     <div class="footer_left">
                         <p class="footer_title"> Medlink </p>
                         <ul class="footer_links">
-                            <li> <a href="/home"> Home </a> </li>
-                            <li> <a href="/browse"> Browse </a></li>
-                            <li> <a href="/account-type-login"> Log In </a> </li>
-                            <li> <a href="/account-type-signup"> Sign Up </a></li>
-                            <li> <a href="sysadmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                           <li> <a href = "/home"> Home </a></li>
+                    <li> <a href = "/browse"> Browse </a></li>
+                    <li> <a href = "/account-type-login"> Log In </a></li>
+                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
+                    <li> <a href="/sysadmin-login"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
                         </ul>
                     </div>
 
