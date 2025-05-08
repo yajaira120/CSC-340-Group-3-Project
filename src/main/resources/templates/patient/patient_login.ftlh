@@ -30,16 +30,17 @@
             <div class="signup_container">
                 <h2> Log In </h2>
 
-                <form id="signup_form">
+                <form id="signup_form" method = "post" action="/login">
+                    <input type="hidden" name="role" value="PATIENT" />
+
                     <label for="email"> Email: </label>
-                    <input type="email" id="email" name="email" placeholder="Email">
+                    <input type="email" id="email" name="email" placeholder="Email" required/>
 
                     <label for="password"> Password: </label>
-                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="password" id="password" name="password" placeholder="Password" required />
 
-                    <button type="submit">
-                        <a href="user_profile.html"> Submit </a>
-                    </button>
+                    <button type="submit"> Submit </button>
+                    <button type="cancel"> <a href="/home"> Cancel </a> </button>
 
                 </form>
 
