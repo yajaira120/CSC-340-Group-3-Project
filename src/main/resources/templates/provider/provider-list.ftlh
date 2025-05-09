@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title> All Patients </title>
+        <title> All Providers </title>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
 
@@ -15,39 +15,51 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "/home"> Home </a></li>
-                    <li> <a href = "/browse> Browse </a></li>
-                    <li> <a href = "choose_account_type_login.html"> Log In </a></li>
-                    <li> <a href = "choose_account_type.html"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li><a href="/home">Home</a></li>
+                                                            <li><a href="/browse">Browse</a></li>
+
+                                                            <#if sessionProvider??>
+                                                                <!-- Only show if the user is logged in -->
+                                                                <li><a href="/provider/details/${sessionProvider.provider_id}">My Account</a></li>
+                                                                <li><a href="/logout">Logout</a></li>
+                                                            <#else>
+                                                                <li><a href="/account-type-login">Log In</a></li>
+                                                                <li><a href="/account-type-signup">Sign Up</a></li>
+                                                            </#if>
+                                                                <li><a href="/SysAdmin.html">Admin Panel</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="patient-list">
+        <div class="provider-list">
             <h1> ${title} </h1>
-            <a href= "/patients/createPatientForm"> Create New Patient </a>
+            <a href= "/provider/createProviderForm"> Create New provider </a>
 
-            <form action="/patients/name">
+            <form action="/provider/name">
                 <input type="text" name="search" placeholder="Search By Name ">
             </form>
 
-            <!-- Patients Table -->
-            <table class= "patients-table">
+            <!-- providers Table -->
+            <table class= "provider-table">
                 <tr>
                     <th> ID </th>
                     <th> Name </th>
                     <th> Address </th>
                     <th> Date of Birth </th>
                     <th> Email </th>
+                    <th> Phone Number </th>
+                    <th> Insurance Provider </th>
+                    <th> Medical History </th>
                 </tr>
-                <#list patientList as patient>
+                <#list providerList as provider>
                 <tr>
-                    <td> ${provider.provider_id} </td>
-                    <td> ${provider.name}</td>
-                    <td> ${provider.location}</td>
-                    <td> ${provider.dob?c}</td>
-                    <td> ${provider.email}</td>
+                    <td> ${provider.provider_id!"N/A"} </td>
+                    <td> ${provider.name!"N/A"}</td>
+
+                    <td> ${provider.dob?c!"N/A"}</td>
+                    <td> ${provider.email!"N/A"}</td>
+
+
 
                 </tr>
                 </#list>

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PatientService {
+public class PatientService{
     @Autowired
     private PatientRepository patientRepository;
 
@@ -15,7 +15,6 @@ public class PatientService {
      * Fetch all patients
      * @return list of all patients
      */
-
     public List<Patient> getAllPatients(){
         return patientRepository.findAll();
     }
@@ -25,7 +24,6 @@ public class PatientService {
      * @param patient_id
      * @return patient
      */
-
     public Patient getPatientById(int patient_id){
         return patientRepository.findById(patient_id).orElse(null);
     }
@@ -74,6 +72,11 @@ public class PatientService {
     public void deletePatientById(int patient_id){
         patientRepository.deleteById(patient_id);
     }
+
+    public Patient getPatientByEmail(String email){
+        return patientRepository.findByEmail(email).orElse(null);
+    }
+
 
 }
 

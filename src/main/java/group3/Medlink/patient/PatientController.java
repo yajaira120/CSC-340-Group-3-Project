@@ -1,21 +1,19 @@
 package group3.Medlink.patient;
 
 import group3.Medlink.provider.ProviderService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Optional;
 
 /**
  * PatientController.java
- * Includes all REST API endpoint mappings for the Patient object.
+ * Includes all API endpoint mappings for the Patient object.
  */
+
 @Controller
 @RequestMapping("/patients")
 public class PatientController {
@@ -25,6 +23,9 @@ public class PatientController {
 
     @Autowired
     private ProviderService providerService;
+
+    @Autowired
+    private PatientRepository patientRepository;
 
     /**
      * Get list of patients
@@ -71,7 +72,7 @@ public class PatientController {
      * @param model
      * @return the form view
      */
-    @GetMapping("/createPatientForm")
+    @GetMapping("/create-patient-form")
     public String showCreatePatientForm(Model model){
         Patient patient = new Patient();
         model.addAttribute("patient", patient);
@@ -87,8 +88,9 @@ public class PatientController {
      * @return updated list of patients
      */
     @PostMapping("/new")
-    public Object addNewPatient(Patient patient, Model model){
+    public Object addNewPatient(@ModelAttribute Patient patient, Model model){
         patientService.addNewPatient(patient);
+        model.addAttribute("patient", patient);
         return "pages/confirmation_page";
     }
 
@@ -128,6 +130,91 @@ public class PatientController {
     public Object deletePatientById(@PathVariable int patientId){
         patientService.deletePatientById(patientId);
         return "redirect:/patients/all";
+    }
+
+    /**
+     * Login Section for Patient
+     */
+
+    /**
+     *  Display login form for patient
+     */
+    @GetMapping("/patient-login-form")
+    public String chooseAccountTypeSignup(){
+        return "patient/patient_login";
+    }
+
+
+    @PostMapping("/login")
+    public String login(@RequestParam String email,
+                        @RequestParam String password,
+                        HttpSession session,
+                        Model model){
+        Optional<Patient> patientOptional = patientRepository.findByEmail(email);
+        if (patientOptional.isPresent() && password.equals(patientOptional.get().getPassword())){
+            Patient patient = patientOptional.get();
+            session.setAttribute("patient", patient);
+
+            return "redirect:/patients/details/" + patient.getPatient_id();
+        }else {
+            model.addAttribute("error", "Invalid credentials");
+            return "patient/patient_login";
+        }
+    }
+
+    /**
+     * Patient-details page
+     */
+    @GetMapping("/details/{patient_id}")
+    public String patientDetails(@PathVariable("patient_id") int id, HttpSession session, Model model){
+        Patient sessionPatient = (Patient) session.getAttribute("patient");
+
+        // Unauthorized or Not Logged In
+        if (sessionPatient == null || sessionPatient.getPatient_id() != id){
+            return "redirect:/patients/patient_login_form";
+        }
+        //model.addAttribute("patient", sessionPatient);
+        return "patient/patient-details";
+    }
+
+    /**
+     * Logout for Patient
+     */
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
+
+
+    /**
+     * Redirecting to Specific Pages for User Profile
+     * @return pages
+     */
+    // Return confirmation page for creating profile
+    @GetMapping("/confirmation-page-patient")
+    public String confirmationPagePatient(){
+        return "pages/confirmation_page";
+    }
+
+    // Return page that will lead to update account form
+    @GetMapping("/edit-account-details/{patient_id}")
+    public String accountDetails(@PathVariable int patient_id, Model model){
+        Patient patient = patientService.getPatientById(patient_id);
+        model.addAttribute("patient", patient);
+        return "pages/patient_profile/edit_account_details";
+    }
+
+    // Return patient appointments list page
+    @GetMapping("/patient-appointments")
+    public String patientAppointments(){
+        return "pages/patient_profile/patient_appointments";
+    }
+
+    // Return providers of patient list with appointments
+    @GetMapping("/providers-for-patients")
+    public String providersForPatient(){
+        return "pages/patient_profile/providers_for_patients";
     }
 
 }

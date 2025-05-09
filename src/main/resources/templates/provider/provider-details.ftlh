@@ -1,118 +1,53 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .profile-card h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .profile-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .profile-card .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-<html>
-    <head>
-        <title> Provider </title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-    </head>
+<div class="profile-card">
+    <h1>Provider Profile</h1>
 
-    <body>
+    <p><span class="label">First Name:</span> ${provider.name}</p>
 
-        <div class="header">
-            <div class="logo">
-                <img src = "/images/logo-medlink.png" alt="Medlink" width="100" height="100"/>
-            </div>
-            <h1> <a href="/home"> Medlink </a> </h1>
+    <p><span class="label">Email:</span> ${provider.email}</p>
+    <p><span class="label">Description:</span> ${provider.description}</p>
+    <p><span class="label">National Provider Number:</span> ${provider.national_provider_num}</p>
+    <p><span class="label">Medical License Number:</span> ${provider.med_license_num}</p>
+    <p><span class="label">Username:</span> ${provider.provider_username}</p>
+    <p><span class="label">Password:</span> ${provider.provider_password}</p>
+    <p><span class="label">Date of Birth:</span> ${provider.dob}</p>
 
-            <div class="navbar">
-                <ul>
-                    <li> <a href = "/home"> Home </a></li>
-                    <li> <a href = "/browse"> Browse </a></li>
-                    <li> <a href = "/account-type-login"> Log In </a></li>
-                    <li> <a href = "/account-type-signup"> Sign Up </a></li>
-                    <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
-                </ul>
-            </div>
-        </div>
+    <br>
+    <a href="/provider/all">← Back to All Providers</a>
+</div>
 
-        <div class="provider-detail">
-
-            <div class="provider-image-container">
-                <img src="/images/icon_1.png" alt="Dr" class="provider-image">
-                <div class="provider-rating">Rating: ${provider.rating!"N/A"}</div>
-            </div>
-            <div class="provider-info">
-                <h1 class="provider-name">${provider.name!"N/A"}</h1>
-                <p class="provider-location">${provider.location!"N/A"}</p>
-                <p class="provider-specialty">${provider.specialty!"N/A"}</p>
-                <p class="provider-credentials">${provider.qualifications!"N/A"}</p>
-
-                <br>
-                <br>
-
-                <div class="calendar">
-                    <p>Available Date and Times:</p>
-                        <ul class="availability-list">
-                            <li>
-                                <strong> October 1, 2025 </strong>
-
-                                <div class="time-slots">
-                                    <a href="form_for_appointment.html">09:00 AM</a>
-                                    <a href="form_for_appointment.html">10:00 AM</a>
-                                    <a href="form_for_appointment.html">11:00 AM</a>
-                                </div>
-                            </li>
-
-                            <li>
-                                <strong> October 5, 2025 </strong>
-                                <div class="time-slots">
-                                    <a href="form_for_appointment.html">01:00 PM</a>
-                                    <a href="form_for_appointment.html">02:30 PM </a>
-                                </div>
-                            </li>
-
-                            <li>
-                                <strong> October 10, 2025 </strong>
-                                <div class="time-slots">
-                                    <a href="form_for_appointment.html">09:00 AM</a>
-                                    <a href="form_for_appointment.html">10:00 AM</a>
-                                </div>
-                            </li>
-
-                            <li>
-                                <strong> October 15, 2025 </strong>
-                                <div class="time-slots">
-                                    <a href="form_for_appointment.html">12:00 PM</a>
-                                    <a href="form_for_appointment.html">03:00 PM</a>
-                                    <a href="form_for_appointment.html">03:30 PM</a>
-                                </div>
-                            </li>
-
-                        </ul>
-                </div>
-
-                <h2 class="reviews-heading">Reviews</h2>
-                <div class="review">
-                    <p class="review-author">Emily R. :</p>
-                    <p class="review-text">Dr. Doe was fantastic! He took the time to explain everything clearly and made me feel at ease.</p>
-                </div>
-                <div class="review">
-                    <p class="review-author">Michael T. :</p>
-                    <p class="review-text">Great experience, very professional and knowledgeable. Highly recommend!</p>
-                </div>
-
-                <a href="write_review.html" class="write_review_button"> Write a Review </a>
-
-            </div>
-        </div>
-
-        <div class="bottom_header">
-            <footer>
-                <div class="footer_content">
-                    <div class="footer_left">
-                        <p class="footer_title"> Medlink </p>
-                        <ul class="footer_links">
-                            <li> <a href="Home.html"> Home </a> </li>
-                            <li> <a href="browse.html"> Browse </a></li>
-                            <li> <a href="choose_account_type_login.html"> Log In </a> </li>
-                            <li> <a href="choose_account_type.html"> Sign Up </a></li>
-                            <li> <a href="SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
-                        </ul>
-                    </div>
-
-                </div>
-            </footer>
-        </div>
-
-    </body>
+</body>
 </html>

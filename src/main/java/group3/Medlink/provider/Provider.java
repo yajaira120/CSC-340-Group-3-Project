@@ -3,6 +3,7 @@ package group3.Medlink.provider;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Columns;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -19,6 +20,7 @@ public class Provider {
     private String name;
 
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
 
     @Column
@@ -26,6 +28,9 @@ public class Provider {
 
     @Column(nullable = false)
     private String provider_password;
+
+    @Column
+    private String provider_username;
 
     @Column
     private String unis;
@@ -59,6 +64,9 @@ public class Provider {
 
     @Column
     private String qualifications;
+
+    @Column(nullable = false)
+    private String role = "PROVIDER"; // Default role
 
     public Provider(){
 
@@ -105,6 +113,14 @@ public class Provider {
     }
     public void setProvider_password(String provider_password){
         this.provider_password = provider_password;
+    }
+
+    //provider_username
+    public String getProvider_username(){
+        return provider_username;
+    }
+    public void setProvider_username(String provider_username){
+        this.provider_username = provider_username;
     }
 
     //unis
@@ -190,5 +206,9 @@ public class Provider {
     public void setQualifications(String qualifications){
         this.qualifications = qualifications;
     }
+
+    //role
+    public String getRole(){ return role;}
+    public void setRole(String role){ this.role = role;}
 
 }

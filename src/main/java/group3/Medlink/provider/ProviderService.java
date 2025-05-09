@@ -1,6 +1,7 @@
 package group3.Medlink.provider;
 
 
+import group3.Medlink.patient.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +21,16 @@ public class ProviderService {
     }
 
     public Provider getProviderById(int provider_id){
+
         return providerRepository.findById(provider_id).orElse(null);
     }
 
-    public void addNewProvider(Provider provider){
-        providerRepository.save(provider);
+    public Provider addNewProvider(Provider provider){
+
+        return providerRepository.save(provider);
     }
+
+
 
     public void updateProvider(int provider_id, Provider provider){
         Provider exist = getProviderById(provider_id);
@@ -45,6 +50,10 @@ public class ProviderService {
         exist.setSpecialty(provider.getSpecialty());
         exist.setQualifications(provider.getQualifications());
 
+    }
+
+    public Provider getProviderByEmail(String email){
+        return providerRepository.findByEmail(email).orElse(null);
     }
 
 }
