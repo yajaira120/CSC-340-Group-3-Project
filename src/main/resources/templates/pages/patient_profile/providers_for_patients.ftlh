@@ -16,11 +16,18 @@
 
             <div class="navbar">
                 <ul>
-                    <li> <a href = "../Home.html"> Home </a></li>
-                    <li> <a href = "../browse.html"> Browse </a></li>
-                    <li> <a href = "../log_in.html"> Log In </a></li>
-                    <li> <a href = "../choose_account_type.html"> Sign Up </a></li>
-                    <li> <a href="../SysAdmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                    <li><a href="/home">Home</a></li>
+                                                            <li><a href="/browse">Browse</a></li>
+
+                                                            <#if sessionPatient??>
+                                                                <!-- Only show if the user is logged in -->
+                                                                <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                <li><a href="/logout">Logout</a></li>
+                                                            <#else>
+                                                                <li><a href="/account-type-login">Log In</a></li>
+                                                                <li><a href="/account-type-signup">Sign Up</a></li>
+                                                            </#if>
+                                                                <li><a href="/SysAdmin.html">Admin Panel</a></li>
                 </ul>
             </div>
         </div>
@@ -95,11 +102,18 @@
                     <div class="footer_left">
                         <p class="footer_title"> Medlink </p>
                         <ul class="footer_links">
-                            <li> <a href="../Home.html"> Home </a> </li>
-                            <li> <a href="../browse.html"> Browse </a></li>
-                            <li> <a href="../log_in.html"> Log In </a> </li>
-                            <li> <a href="../choose_account_type.html"> Sign Up </a></li>
-                            <li> <a href="../sysadmin.html"> Admin Panel </a></li> <!-- New Link for sysadmin -Seth -->
+                            <li><a href="/home">Home</a></li>
+                                                                    <li><a href="/browse">Browse</a></li>
+
+                                                                    <#if sessionPatient??>
+                                                                        <!-- Only show if the user is logged in -->
+                                                                        <li><a href="/patients/details/${sessionPatient.patient_id}">My Account</a></li>
+                                                                        <li><a href="/logout">Logout</a></li>
+                                                                    <#else>
+                                                                        <li><a href="/account-type-login">Log In</a></li>
+                                                                        <li><a href="/account-type-signup">Sign Up</a></li>
+                                                                    </#if>
+                                                                        <li><a href="/SysAdmin.html">Admin Panel</a></li>
                         </ul>
                     </div>
 

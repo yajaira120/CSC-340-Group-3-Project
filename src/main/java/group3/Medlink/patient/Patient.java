@@ -1,12 +1,16 @@
 package group3.Medlink.patient;
 
+import group3.Medlink.appointment.Appointment;
+import group3.Medlink.review.Review;
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 import group3.Medlink.provider.Provider;
 import group3.Medlink.sysadmin.User;
 
 @Entity
-@Table (name = "patient")
+@Table (name = "patients")
 
 public class Patient {
 
@@ -41,13 +45,15 @@ public class Patient {
     @Column
     private String profile_picture;
 
-    //@ManyToOne
-    //@JoinColumn(name="userId")
-    //private User userId;
+    @ManyToOne
+    @JoinColumn(name="providers")
+    private Provider providers;
 
-    //@ManyToOne
-    //@JoinColumn(name="providers")
-    //private Provider providers;
+    @OneToMany(mappedBy = "patient")
+    private List<Appointment> appointments;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Review> reviews;
 
     //Constructor
     public Patient(){
@@ -133,17 +139,25 @@ public class Patient {
         this.profile_picture = profile_picture;
     }
 
-    //userId
-    //public User getUserId(){
-        //return userId;
-    //}
-    //public void setUserId(User userId){
-        //this.userId = userId;
-    //}
-
     //providers
-    //public Provider getProviders(){ return providers;}
-    //public void setProviders(Provider providers){ this.providers = providers;}
+    public Provider getProviders(){ return providers;}
+    public void setProviders(Provider providers){ this.providers = providers;}
+
+    //appointments
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
+    }
+
+    //reviews
+    public List<Review> getReviews() {
+        return reviews;
+    }
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
 
 }
